@@ -1,0 +1,26 @@
+html, body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+
+}
+
+body {
+    padding: 20px;
+}
+
+.day-row {
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+.forecast-cell {
+    border: 1px solid #000;
+    border-radius: 5px;
+    width: 100px;
+    height: 100px;
+}
+
+.current-day {
+    border: 2px solid #0000fc;
+}

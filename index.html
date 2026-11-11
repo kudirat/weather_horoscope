@@ -2,9 +2,70 @@
 <html>
     <head>
         <title>My Website</title>
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
-
+        <h1>Weather Horoscope</h1>
+        <input oninput="updateCountry()" type="text" id="country-input" placeholder="United States">
+        <input oninput="updateState()" type="text" id="state-input" placeholder="New York">
+        <button onclick="getForecast(country, state)">Get Forecast</button>
+        <br>
+        <hr>
+        <table id="forecast-table">
+            <tr>
+                <th class="day-row" id="sunday-row">Sunday</th>
+                <th class="day-row" id="monday-row">Monday</th>
+                <th class="day-row" id="tuesday-row">Tuesday</th>
+                <th class="day-row" id="wednesday-row">Wednesday</th>
+                <th class="day-row" id="thursday-row">Thursday</th>
+                <th class="day-row" id="friday-row">Friday</th>
+                <th class="day-row" id="saturday-row">Saturday</th>
+            </tr>
+            <tr>
+                <td class="forecast-cell" id="sunday-forecast">
+                    <h3 id="sunday-date"></h3>
+                    <h3 id="sunday-high-temp"></h3>
+                    <h3 id="sunday-low-temp"></h3>
+                    <h3 id="sunday-conditions"></h3>
+                </td>
+                <td class="forecast-cell" id="monday-forecast">
+                    <h3 id="monday-date"></h3>
+                    <h3 id="monday-high-temp"></h3>
+                    <h3 id="monday-low-temp"></h3>
+                    <h3 id="monday-conditions"></h3>
+                </td>
+                <td class="forecast-cell" id="tuesday-forecast">
+                    <h3 id="tuesday-date"></h3>
+                    <h3 id="tuesday-high-temp"></h3>
+                    <h3 id="tuesday-low-temp"></h3>
+                    <h3 id="tuesday-conditions"></h3>
+                </td>
+                <td class="forecast-cell" id="wednesday-forecast">
+                    <h3 id="wednesday-date"></h3>
+                    <h3 id="wednesday-high-temp"></h3>
+                    <h3 id="wednesday-low-temp"></h3>
+                    <h3 id="wednesday-conditions"></h3>
+                </td>
+                <td class="forecast-cell" id="thursday-forecast">
+                    <h3 id="thursday-date"></h3>
+                    <h3 id="thursday-high-temp"></h3>
+                    <h3 id="thursday-low-temp"></h3>
+                    <h3 id="thursday-conditions"></h3>
+                </td>
+                <td class="forecast-cell" id="friday-forecast">
+                    <h3 id="friday-date"></h3>
+                    <h3 id="friday-high-temp"></h3>
+                    <h3 id="friday-low-temp"></h3>
+                    <h3 id="friday-conditions"></h3>
+                </td>
+                <td class="forecast-cell" id="saturday-forecast">
+                    <h3 id="saturday-date"></h3>
+                    <h3 id="saturday-high-temp"></h3>
+                    <h3 id="saturday-low-temp"></h3>
+                    <h3 id="saturday-conditions"></h3>
+                </td>
+            </tr>
+        </table>
     </body>
+    <script src="sketch.js"></script>
 </html>
