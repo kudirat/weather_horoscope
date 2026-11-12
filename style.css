@@ -15,12 +15,64 @@ body {
 }
 
 .forecast-cell {
+    padding: 20px;
     border: 1px solid #000;
     border-radius: 5px;
     width: 100px;
     height: 100px;
 }
 
+#content-row {
+    display: block;
+    justify-content: space-between;
+}
+
 .current-day {
     border: 2px solid #0000fc;
+}
+
+.uncurrent-day {
+    border: 0px;
+}
+
+#landing-title{
+  font-family: "Monofett", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.snow-palette {
+    background-color: #8D9CA6;
+}
+
+.rain-palette {
+    background-color: #182933;
+}
+
+.fog-palette {
+    background-color: #182933;
+}
+
+.wind-palette {
+    background-color: #182933;
+}
+
+.cloudy-palette {
+    background-color: #182933;
+}
+
+.partial-cloudy-day-palette {
+    background-color: #182933;
+}
+
+.partial-cloudy-night-palette {
+    background-color: #182933;
+}
+
+.clear-day-palette {
+    background-color: #182933;
+}
+
+.clear-night-palette {
+    background-color: #182933;
 }
