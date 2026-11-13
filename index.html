@@ -11,12 +11,12 @@
 
 <body>
     <h1 id="landing-title">Your Weather Forecast for the Week</h1>
-    <input oninput="updateCountry()" type="text" id="country-input" placeholder="United States">
-    <input oninput="updateState()" type="text" id="state-input" placeholder="New York">
+    <input style="height: 30px;" oninput="updateCountry()" type="text" id="country-input" placeholder="United States">
+    <input style="height: 30px;" oninput="updateState()" type="text" id="state-input" placeholder="New York">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Emilys+Candy&family=Monofett&display=swap" rel="stylesheet">
-    <button onclick="getForecast(country, state)">Get Forecast</button>
+    <button id="get-forecast-button" onclick="getForecast(country, state)">Get Forecast</button>
     <br>
     <hr>
     <table id="forecast-table">

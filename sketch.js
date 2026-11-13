@@ -72,7 +72,8 @@ function createWeatherData (result) {
     const weatherDay = {
       date: dayData.datetime,
       weekday: new Date(dayData.datetime).toLocaleDateString('en-US', {
-        weekday: 'long'
+        weekday: 'long',
+        timeZone: 'UTC'
       }),
       tempMax: dayData.tempmax,
       tempMin: dayData.tempmin,
@@ -84,24 +85,31 @@ function createWeatherData (result) {
 }
 
 function displayForecast (weatherData) {
+  const displayedWeekdays = new Set()
   for (let i = 0; i < weatherData.length; i++) {
     const day = weatherData[i]
+    const weekday = day.weekday.toLowerCase()
+    if (displayedWeekdays.has(weekday)) {
+      continue
+    }
+
+    displayedWeekdays.add(weekday)
     const dayElement = document.getElementById(
-      `${day.weekday.toLowerCase()}-forecast`
+      `${weekday}-forecast`
     )
     // console.log(Math.round(day.tempMax))
     if (dayElement) {
       dayElement.querySelector(
-        `#${day.weekday.toLowerCase()}-date`
+        `#${weekday}-date`
       ).textContent = `Today\'s Date: ${day.date}`
       dayElement.querySelector(
-        `#${day.weekday.toLowerCase()}-high-temp`
+        `#${weekday}-high-temp`
       ).textContent = `High: ${Math.round(day.tempMax)}F`
       dayElement.querySelector(
-        `#${day.weekday.toLowerCase()}-low-temp`
+        `#${weekday}-low-temp`
       ).textContent = `Low: ${Math.round(day.tempMin)}F`
       dayElement.querySelector(
-        `#${day.weekday.toLowerCase()}-conditions`
+        `#${weekday}-conditions`
       ).textContent = `Today\'s Conditions: ${day.conditions}`
     }
   }
