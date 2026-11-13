@@ -6,17 +6,57 @@ html, body {
     width: 100vw;
 }
 
-body {
-    padding: 20px;
+#landing-title{
+  font-family: "Monofett", monospace;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 4em;
+  color: #0F0E37;
+  padding-top: 20px;
+  margin-top: -10px;
+  margin-left: 50px;
+}
+
+#country-input { 
+    margin-left: 30px;
+}
+
+#state-input {
+    margin-left: 5px;
+}
+
+/* table, th, td {
+  border: 1px solid;
+} */
+
+#forecast-table {
+    border-collapse: separate;
+    margin-top: 30px;
+    margin-left: 20px;
 }
 
 .day-row {
     border: 1px solid #000;
     border-radius: 5px;
     padding: 10px;
-     font-family: "Emilys Candy", serif;
-    font-weight: 400;
+    font-family: "Emilys Candy", serif;
+    font-weight: 200;
+    font-size: 1.5em;
     font-style: normal;
+    background-color: #0F0E37;
+    color: #CAA5C8;
+}
+
+.day-row th{
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 10px;
+    font-family: "Emilys Candy", serif;
+    font-weight: 200;
+    font-size: 1.5em;
+    font-style: normal;
+    background-color: #CAA5C8;
+    color: #0F0E37;
 }
 
 .forecast-cell {
@@ -24,16 +64,56 @@ body {
     border: 1px solid #000;
     border-radius: 5px;
     width: 10vw;
-    height: 50vh;
+    height: 10vh;
     background-color: #f0f0f0;
 }
 
-.forecast-cell h3 {
-    font-size: 1.2em;
-     font-family: "Emilys Candy", serif;
+.forecast-date {
+    font-size: 1.5em;
+    font-family: "Emilys Candy", serif;
     font-weight: 400;
     font-style: normal;
-    margin-top: -10px;
+    position: relative;
+    top: -30px;
+    /* text-decoration: underline; */
+    text-align: center;
+    background-color: #CAA5C8;
+    border-radius: 5px;
+}
+
+.high-temp {
+    font-size: 1.2em;
+    font-family: "Emilys Candy", serif;
+    font-weight: 400;
+    font-style: normal;
+    position: relative;
+    top: -30px;
+    /* text-decoration: underline; */
+    text-align: center;
+    /* background-color: #CAA5C8; */
+}
+
+.low-temp {
+    font-size: 1.2em;
+    font-family: "Emilys Candy", serif;
+    font-weight: 400;
+    font-style: normal;
+    position: relative;
+    top: -50px;
+    /* text-decoration: underline; */
+    text-align: center;
+}
+
+.conditions {
+    font-size: 1.2em;
+    font-family: "Emilys Candy", serif;
+    font-weight: 400;
+    font-style: normal;
+    position: relative;
+    top: -50px;
+    background-color: #BAB6E2;
+    border-radius: 5px;
+    text-align: center;
 }
 
 #content-row {
@@ -42,30 +122,78 @@ body {
 }
 
 .current-day {
-    border: 4px double #0000fc;
+    border: 4px double #5a77b9;
 }
 
 .uncurrent-day {
     border: 0px;
 }
 
-#landing-title{
-  font-family: "Monofett", monospace;
-  font-weight: 200;
-  font-style: normal;
-  font-size: 4em;
-  color: #5a77b9;
-  margin-top: -10px;
-}
-
 #get-forecast-button {
-    padding: 10px 10px;
+    padding: 10px 5px;
     font-size: 16px;
     background-color: #5a77b9;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin-left: 10px;
+}
+
+#sign-input {
+    height: 30px;
+    margin-left: 130px;
+}
+
+#get-horoscope-button {
+    padding: 10px 5px;
+    font-size: 16px;
+    background-color: #BAB6E2;
+    color: #0F0E37;
+    border: 0.75px solid #0F0E37;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.horoscope-panel {
+    position: absolute;
+    top: 35%;
+    left: 35%;
+    height: fit-content;
+    width: 400px;
+    background-color: #f0f0f0;
+    border: 2px solid #0F0E37;
+    border-radius: 5px;
+
+    h2{
+        font-family: "Emilys Candy", serif;
+        font-weight: 200;
+        font-size: 1.5em;
+        text-align: center;
+        color: #081B45;
+        background-color: #CAA5C8;
+        border-radius: 5px;
+
+    }
+
+    h3{
+        font-family: "Emilys Candy", serif;
+        font-weight: 200;
+        font-size: 1em;
+        text-align: center;
+        color: #081B45;
+        padding: 10px;
+    }
+
+    #close-horoscope {
+        position: static;
+        top: -245px;
+        right: -350px;
+        font-size:1.2em;
+        color: #081B45;
+        border: none;
+    }
 }
 
 .snow-palette {

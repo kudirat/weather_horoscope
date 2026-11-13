@@ -13,6 +13,7 @@ const possibleLocales = [
 
 let country = 'US'
 let state = 'New York'
+let sign = 'Pisces'
 
 window.addEventListener('load', () => {
   console.log('Page loaded, get the current date')
@@ -94,23 +95,21 @@ function displayForecast (weatherData) {
     }
 
     displayedWeekdays.add(weekday)
-    const dayElement = document.getElementById(
-      `${weekday}-forecast`
-    )
+    const dayElement = document.getElementById(`${weekday}-forecast`)
     // console.log(Math.round(day.tempMax))
     if (dayElement) {
-      dayElement.querySelector(
-        `#${weekday}-date`
-      ).textContent = `Today\'s Date: ${day.date}`
-      dayElement.querySelector(
-        `#${weekday}-high-temp`
-      ).textContent = `High: ${Math.round(day.tempMax)}F`
-      dayElement.querySelector(
-        `#${weekday}-low-temp`
-      ).textContent = `Low: ${Math.round(day.tempMin)}F`
-      dayElement.querySelector(
-        `#${weekday}-conditions`
-      ).textContent = `Today\'s Conditions: ${day.conditions}`
+      dayElement.querySelector(`#${weekday}-date`).textContent = `${day.date}`
+      dayElement.querySelector(`#${weekday}-date`).classList.add('forecast-date')
+      dayElement.querySelector(`#${weekday}-high-temp`).textContent = `High: ${Math.round(day.tempMax)}F`
+      document.getElementById(`${weekday}-high-temp`).classList.add('high-temp')
+      dayElement.querySelector(`#${weekday}-low-temp`).textContent = `Low: ${Math.round(day.tempMin)}F`
+      document.getElementById(`${weekday}-low-temp`).classList.add('low-temp')
+      dayElement.querySelector(`#${weekday}-conditions`).textContent = `Conditions: ${day.conditions}`
+      document.getElementById(`${weekday}-conditions`).classList.add('conditions')
+      if(day.conditions == "Partially cloudy"){
+      dayElement.querySelector(`#${weekday}-icon`).classList.add('fas', 'fa-cloud')     
+     }
+
     }
   }
 }
@@ -118,7 +117,7 @@ function displayForecast (weatherData) {
 function highlightCurrentDay (country) {
   console.log('country is : ' + country)
   let locale = checkLocation(country)
-  console.log("locale is: " + locale)
+  console.log('locale is: ' + locale)
   let currDay = new Date()
     .toLocaleDateString(locale, { weekday: 'long' })
     .toLowerCase()
@@ -126,7 +125,7 @@ function highlightCurrentDay (country) {
   let currDayTemp = document.getElementById(`${currDay}-forecast`)
   if (locale == 'en-us' || locale == 'en-US') {
     if (currDayTemp != null || currDayTemp != undefined) {
-        console.log('currDayTemp is: ' + currDayTemp.value)
+      console.log('currDayTemp is: ' + currDayTemp.value)
 
       currDayTemp.classList.add('current-day')
       document.getElementById(`${currDay}-row`).classList.add('current-day')
@@ -174,4 +173,47 @@ function checkLocation (country) {
     currLocale = 'en-AU'
   }
   return currLocale
+}
+
+async function getHoroscope(sign) {
+  let url = `https://freehoroscopeapi.com/api/v1/get-horoscope/daily?sign=${sign}`
+  console.log(`Fetching horoscope data from: ${url}`)
+  try {
+    let response = await fetch(url)
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`)
+    }
+
+    let result = await response.json()
+    let currSign = result.data.sign
+    let currHoroscope = result.data.horoscope
+    let horoscopeData = displayHoroscope(currSign, currHoroscope)
+    console.log(horoscopeData)
+  
+  } catch (error) {
+    console.error(error.message)
+  }
+}
+
+function updateSign () {
+  let signInput = document.getElementById('sign-input')
+  sign = signInput.value
+}
+
+function displayHoroscope(sign, horoscope){
+  const horoscopePanel = document.getElementById('horoscope-panel');
+  // const horoscopeTitle = document.getElementById('horoscope-title');
+  // const horoscopeText = document.getElementById('horoscope-text');
+  console.log(sign +" "+ horoscope);
+  console.log(horoscopePanel);
+
+  horoscopePanel.querySelector(`#horoscope-title`).textContent = `Your Horoscope: ${sign}`
+  horoscopePanel.querySelector(`#horoscope-text`).textContent = `${horoscope}`
+  horoscopePanel.hidden = false;
+}
+
+
+function closeHoroscope(){
+  const horoscopePanel = document.getElementById('horoscope-panel');
+  horoscopePanel.hidden = true;
 }
