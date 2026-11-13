@@ -109,7 +109,15 @@ function displayForecast (weatherData) {
       if(day.conditions == "Partially cloudy"){
       dayElement.querySelector(`#${weekday}-icon`).classList.add('fas', 'fa-cloud')     
      }
-
+     else if(day.conditions == "Rain, Overcast" || day.conditions == "Rain"){
+      dayElement.querySelector(`#${weekday}-icon`).classList.add('fas', 'fa-cloud-rain')     
+     }
+    else if(day.conditions == "Clear"){
+          dayElement.querySelector(`#${weekday}-icon`).classList.add('fas', 'fa-sun')     
+        }
+    else if(day.conditions == "Snow"){
+          dayElement.querySelector(`#${weekday}-icon`).classList.add('fas', 'fa-snowflake')     
+        }    
     }
   }
 }

@@ -10,7 +10,7 @@ html, body {
   font-family: "Monofett", monospace;
   font-weight: 200;
   font-style: normal;
-  font-size: 4em;
+  font-size: 4.2em;
   color: #0F0E37;
   padding-top: 20px;
   margin-top: -10px;
@@ -121,8 +121,40 @@ html, body {
     justify-content: space-between;
 }
 
+.fa-cloud {
+    font-size: 50px;
+    /* text-shadow: 2px 2px 4px rgba(22, 152, 78, 0.2); */
+    color: #081B45;
+    margin-left: 30px;
+    margin-top: -50px;
+}
+
+.fa-cloud-rain {
+    font-size: 50px;
+    /* text-shadow: 2px 2px 4px rgba(22, 152, 78, 0.2); */
+    color: #081B45;
+    margin-left: 30px;
+    margin-top: -50px;
+}
+
+.fa-sun {
+    font-size: 50px;
+    /* text-shadow: 2px 2px 4px rgba(22, 152, 78, 0.2); */
+    color: #081B45;
+    margin-left: 30px;
+    margin-top: -50px;
+}
+
+.fa-snowflake {
+    font-size: 50px;
+    /* text-shadow: 2px 2px 4px rgba(22, 152, 78, 0.2); */
+    color: #081B45;
+    margin-left: 30px;
+    margin-top: -50px;
+}
+
 .current-day {
-    border: 4px double #5a77b9;
+    border: 10px double #5a77b9;
 }
 
 .uncurrent-day {
@@ -134,7 +166,7 @@ html, body {
     font-size: 16px;
     background-color: #5a77b9;
     color: white;
-    border: none;
+    border: 0.75px solid #0F0E37;
     border-radius: 5px;
     cursor: pointer;
     margin-left: 10px;
@@ -149,7 +181,7 @@ html, body {
     padding: 10px 5px;
     font-size: 16px;
     background-color: #BAB6E2;
-    color: #0F0E37;
+    color: white;
     border: 0.75px solid #0F0E37;
     border-radius: 5px;
     cursor: pointer;
